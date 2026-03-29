@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="aosp"
+          fetch="https://android.googlesource.com/"
+          review="https://android-review.googlesource.com/" />
+  <remote name="droidvm"
+          fetch="https://github.com/Droid-VM/" />
+
+  <default remote="aosp"
+           revision="android16-qpr2-release"
+           sync-j="8" />
+
+  <!-- Build system -->
+  <project path="build/blueprint" name="platform/build/blueprint" />
+  <project path="build/make" name="platform/build/make" />
+  <project path="build/release" name="platform/build/release" />
+  <project path="build/soong" name="platform/build/soong" />
+
+  <!-- Toolchain / prebuilts -->
+  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" />
+  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" />
+  <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" />
+  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" />
+  <project path="prebuilts/rust" name="platform/prebuilts/rust" />
+
+  <!-- Core platform -->
+  <project path="bionic" name="platform/bionic" />
+  <project path="frameworks/av" name="platform/frameworks/av" />
+  <project path="frameworks/native" name="platform/frameworks/native" />
+  <project path="hardware/interfaces" name="platform/hardware/interfaces" />
+  <project path="hardware/libhardware" name="platform/hardware/libhardware" />
+  <project path="system/core" name="platform/system/core" />
+  <project path="system/libbase" name="platform/system/libbase" />
+  <project path="system/logging" name="platform/system/logging" />
+  <project path="system/media" name="platform/system/media" />
+  <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" />
+  <project path="system/tools/aidl" name="platform/system/tools/aidl" />
+
+  <!-- Virtualization -->
+  <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" />
+
+  <!-- Rust / crosvm direct deps -->
+  <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
+  <project path="external/minijail" name="platform/external/minijail" />
+  <project path="external/virtio-media" name="platform/external/virtio-media" />
+  <project path="external/vm_tools/p9" name="platform/external/vm_tools/p9" />
+
+  <!-- Graphics / display stack -->
+  <project path="hardware/google/aemu" name="platform/hardware/google/aemu" />
+  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" />
+  <project path="external/libdrm" name="platform/external/libdrm" />
+  <project path="external/minigbm" name="platform/external/minigbm" />
+  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
+  <project path="external/wayland" name="platform/external/wayland" />
+  <project path="external/wayland-protocols" name="platform/external/wayland-protocols" />
+
+  <!-- Native libs -->
+  <project path="external/libcap" name="platform/external/libcap" />
+  <project path="external/libcxx" name="platform/external/libcxx" />
+  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
+  <project path="external/libepoxy" name="platform/external/libepoxy" />
+  <project path="external/libffi" name="platform/external/libffi" />
+  <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" />
+  <project path="external/lz4" name="platform/external/lz4" />
+  <project path="external/protobuf" name="platform/external/protobuf" />
+  <project path="external/zlib" name="platform/external/zlib" />
+
+  <!-- Droid-VM forks -->
+  <project path="external/crosvm"
+           name="crosvm"
+           remote="droidvm"
+           revision="droidvm" />
+  <project path="external/libvncserver"
+           name="libvncserver"
+           remote="droidvm"
+           revision="droidvm" />
+</manifest>
