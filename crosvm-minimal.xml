@@ -32,23 +32,47 @@
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" />
   <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" />
   <project path="prebuilts/rust" name="platform/prebuilts/rust" />
+  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" />
+  <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" />
+
+  <!-- GSI compatibility snapshots required by aosp_arm64 -->
+  <project path="prebuilts/vndk/v31" name="platform/prebuilts/vndk/v31" />
+  <project path="prebuilts/vndk/v32" name="platform/prebuilts/vndk/v32" />
+  <project path="prebuilts/vndk/v33" name="platform/prebuilts/vndk/v33" />
+  <project path="prebuilts/vndk/v34" name="platform/prebuilts/vndk/v34" />
 
   <!-- Core platform -->
+  <project path="art" name="platform/art" />
   <project path="bionic" name="platform/bionic" />
+  <project path="frameworks/base" name="platform/frameworks/base" />
   <project path="frameworks/av" name="platform/frameworks/av" />
   <project path="frameworks/native" name="platform/frameworks/native" />
   <project path="hardware/interfaces" name="platform/hardware/interfaces" />
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
+  <project path="kernel/configs" name="kernel/configs" />
   <project path="device/generic/arm64" name="device/generic/arm64" />
   <project path="device/generic/common" name="device/generic/common" />
+  <project path="external/selinux" name="platform/external/selinux" />
   <project path="system/core" name="platform/system/core" />
+  <project path="system/apex" name="platform/system/apex" />
   <project path="system/libbase" name="platform/system/libbase" />
+  <project path="system/libhidl" name="platform/system/libhidl" />
+  <project path="system/libvintf" name="platform/system/libvintf" />
   <project path="system/logging" name="platform/system/logging" />
   <project path="system/media" name="platform/system/media" />
   <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" />
+  <project path="system/sepolicy" name="platform/system/sepolicy" />
+  <project path="system/security" name="platform/system/security" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" />
+  <project path="system/tools/hidl" name="platform/system/tools/hidl" />
+  <project path="system/tools/xsdc" name="platform/system/tools/xsdc" />
+  <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" />
 
   <!-- Virtualization -->
+  <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" />
+  <project path="platform_testing" name="platform/platform_testing" />
+  <project path="packages/modules/common" name="platform/packages/modules/common" />
+  <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" />
   <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" />
 
   <!-- Rust / crosvm direct deps -->
@@ -58,6 +82,7 @@
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
   <project path="external/starlark-go" name="platform/external/starlark-go" />
   <project path="external/minijail" name="platform/external/minijail" />
+  <project path="external/mesa3d" name="platform/external/mesa3d" />
   <project path="external/virtio-media" name="platform/external/virtio-media" />
   <project path="external/vm_tools/p9"
            name="platform/external/vm_tools/p9"
@@ -73,6 +98,8 @@
   <project path="external/wayland-protocols" name="platform/external/wayland-protocols" />
 
   <!-- Native libs -->
+  <project path="external/abseil-cpp" name="platform/external/abseil-cpp" />
+  <project path="external/error_prone" name="platform/external/error_prone" />
   <project path="external/libcap" name="platform/external/libcap" />
   <project path="external/libcxx" name="platform/external/libcxx" />
   <project path="external/libcxxabi" name="platform/external/libcxxabi" />
@@ -81,6 +108,7 @@
   <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" />
   <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/protobuf" name="platform/external/protobuf" />
+  <project path="external/sqlite" name="platform/external/sqlite" />
   <project path="external/zlib" name="platform/external/zlib" />
 
   <!-- Droid-VM forks -->
