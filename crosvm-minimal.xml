@@ -12,7 +12,7 @@
 
   <!-- Build system -->
   <project path="build/blueprint" name="platform/build/blueprint" />
-  <project path="build/make" name="platform/build/make" />
+  <project path="build/make" name="platform/build" />
   <project path="build/release" name="platform/build/release" />
   <project path="build/soong" name="platform/build/soong" />
 
@@ -43,7 +43,9 @@
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
   <project path="external/minijail" name="platform/external/minijail" />
   <project path="external/virtio-media" name="platform/external/virtio-media" />
-  <project path="external/vm_tools/p9" name="platform/external/vm_tools/p9" />
+  <project path="external/vm_tools/p9"
+           name="platform/external/vm_tools/p9"
+           revision="main" />
 
   <!-- Graphics / display stack -->
   <project path="hardware/google/aemu" name="platform/hardware/google/aemu" />
