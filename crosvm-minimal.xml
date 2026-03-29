@@ -52,8 +52,11 @@
   <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" />
 
   <!-- Rust / crosvm direct deps -->
+  <project path="external/go-cmp" name="platform/external/go-cmp" />
   <project path="external/golang-protobuf" name="platform/external/golang-protobuf" />
+  <project path="external/pogreb" name="platform/external/pogreb" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
+  <project path="external/starlark-go" name="platform/external/starlark-go" />
   <project path="external/minijail" name="platform/external/minijail" />
   <project path="external/virtio-media" name="platform/external/virtio-media" />
   <project path="external/vm_tools/p9"
