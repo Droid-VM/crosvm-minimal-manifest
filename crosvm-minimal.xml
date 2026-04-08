@@ -5,6 +5,8 @@
           review="https://android-review.googlesource.com/" />
   <remote name="droidvm"
           fetch="https://github.com/Droid-VM/" />
+  <remote name="crosvm-android"
+          fetch="https://github.com/Crosvm-Android/" />
 
   <default remote="aosp"
            revision="android16-qpr2-release"
@@ -21,10 +23,6 @@
     <linkfile src="tools" dest="build/tools" />
   </project>
   <project path="build/release" name="platform/build/release" />
-  <project path="build/soong" name="platform/build/soong">
-    <linkfile src="root.bp" dest="Android.bp" />
-    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
-  </project>
 
   <!-- Toolchain / prebuilts -->
   <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" />
@@ -80,7 +78,6 @@
   <project path="platform_testing" name="platform/platform_testing" />
   <project path="packages/modules/common" name="platform/packages/modules/common" />
   <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" />
-  <project path="packages/modules/Virtualization" name="platform/packages/modules/Virtualization" />
 
   <!-- Rust / crosvm direct deps -->
   <project path="external/go-cmp" name="platform/external/go-cmp" />
@@ -88,7 +85,6 @@
   <project path="external/googletest" name="platform/external/googletest" />
   <project path="external/gwp_asan" name="platform/external/gwp_asan" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" />
-  <project path="external/rust/crates/v4l2r" name="platform/external/rust/crates/v4l2r" />
   <project path="external/pogreb" name="platform/external/pogreb" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
   <project path="external/scudo" name="platform/external/scudo" />
@@ -105,7 +101,6 @@
   <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" />
   <project path="external/libdrm" name="platform/external/libdrm" />
   <project path="external/minigbm" name="platform/external/minigbm" />
-  <project path="external/virglrenderer" name="platform/external/virglrenderer" />
   <project path="external/wayland" name="platform/external/wayland" />
   <project path="external/wayland-protocols" name="platform/external/wayland-protocols" />
 
@@ -123,19 +118,25 @@
   <project path="external/libcxxabi" name="platform/external/libcxxabi" />
   <project path="external/libepoxy" name="platform/external/libepoxy" />
   <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libjpeg-turbo" name="platform/external/libjpeg-turbo" />
   <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/perfetto" name="platform/external/perfetto" />
   <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/sqlite" name="platform/external/sqlite" />
   <project path="external/speex" name="platform/external/speex" />
   <project path="external/zlib" name="platform/external/zlib" />
 
+  <!-- Crosvm-Android forks -->
+  <project path="build/soong" name="soong" remote="crosvm-android">
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="packages/modules/Virtualization" name="Virtualization" remote="crosvm-android" />
+  <project path="external/crosvm" name="crosvm" remote="crosvm-android" revision="main" />
+  <project path="external/rust/crates/v4l2r" name="v4l2r" remote="crosvm-android" />
+  <project path="external/virglrenderer" name="virglrenderer" remote="crosvm-android" />
+  <project path="external/libjpeg-turbo" name="libjpeg-turbo" remote="crosvm-android" />
+  <project path="external/sqlite" name="sqlite" remote="crosvm-android" />
+
   <!-- Droid-VM forks -->
-  <project path="external/crosvm"
-           name="crosvm"
-           remote="droidvm"
-           revision="droidvm" />
   <project path="external/libvncserver"
            name="libvncserver"
            remote="droidvm"
