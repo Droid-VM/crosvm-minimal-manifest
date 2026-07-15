@@ -130,7 +130,7 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="external/rust/crates/v4l2r" name="v4l2r" remote="crosvm-android" />
-  <project path="external/virglrenderer" name="virglrenderer" remote="crosvm-android" />
+  <project path="external/virglrenderer" name="virglrenderer" remote="droidvm" revision="3d-accel" />
   <project path="external/libjpeg-turbo" name="libjpeg-turbo" remote="crosvm-android" />
   <project path="external/sqlite" name="sqlite" remote="crosvm-android" />
 
