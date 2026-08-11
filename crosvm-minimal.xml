@@ -84,6 +84,7 @@
   <project path="external/golang-protobuf" name="platform/external/golang-protobuf" />
   <project path="external/googletest" name="platform/external/googletest" />
   <project path="external/gwp_asan" name="platform/external/gwp_asan" />
+  <project path="external/zstd" name="platform/external/zstd" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" />
   <project path="external/pogreb" name="platform/external/pogreb" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
