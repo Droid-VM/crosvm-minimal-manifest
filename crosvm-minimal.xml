@@ -85,7 +85,6 @@
   <project path="external/golang-protobuf" name="platform/external/golang-protobuf" />
   <project path="external/googletest" name="platform/external/googletest" />
   <project path="external/gwp_asan" name="platform/external/gwp_asan" />
-  <project path="external/zstd" name="platform/external/zstd" />
   <project path="external/rust/cxx" name="platform/external/rust/cxx" />
   <project path="external/pogreb" name="platform/external/pogreb" />
   <project path="external/rust/android-crates-io" name="platform/external/rust/android-crates-io" />
@@ -140,6 +139,11 @@
   <project path="external/crosvm" name="crosvm" remote="droidvm" revision="droidvm" />
   <project path="packages/modules/Virtualization" name="Virtualization" remote="droidvm"
            revision="android16-qpr2-release-local" />
+  <!-- AOSP's libzstd names who may depend on it, and crosvm's disk is not on that list
+       (nor is fs_mgr/libsnapshot, which already depended on it). Visibility is declared by
+       the provider, so the grant has to live in zstd itself; this fork is that one commit on
+       top of the AOSP revision. -->
+  <project path="external/zstd" name="zstd" remote="droidvm" revision="droidvm" />
   <project path="external/libvncserver"
            name="libvncserver"
            remote="droidvm"
