@@ -69,6 +69,7 @@
   <project path="system/security" name="platform/system/security" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" />
+  <project path="system/tools/sysprop" name="platform/system/tools/sysprop" />
   <project path="system/tools/xsdc" name="platform/system/tools/xsdc" />
   <project path="system/unwinding" name="platform/system/unwinding" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" />
