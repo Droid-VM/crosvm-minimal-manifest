@@ -144,4 +144,8 @@
        the provider, so the grant has to live in zstd itself; this fork is that one commit on
        top of the AOSP revision. -->
   <project path="external/zstd" name="zstd" remote="droidvm" revision="droidvm" />
+  <project path="external/libvncserver"
+           name="libvncserver"
+           remote="droidvm"
+           revision="droidvm" />
 </manifest>
