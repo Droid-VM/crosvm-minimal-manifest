@@ -99,7 +99,6 @@
 
   <!-- Graphics / display stack -->
   <project path="hardware/google/aemu" name="platform/hardware/google/aemu" />
-  <project path="hardware/google/gfxstream" name="platform/hardware/google/gfxstream" />
   <project path="external/libdrm" name="platform/external/libdrm" />
   <project path="external/minigbm" name="platform/external/minigbm" />
   <project path="external/wayland" name="platform/external/wayland" />
@@ -131,21 +130,18 @@
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
   <project path="external/rust/crates/v4l2r" name="v4l2r" remote="crosvm-android" />
-  <project path="external/virglrenderer" name="virglrenderer" remote="droidvm" revision="3d-accel" />
   <project path="external/libjpeg-turbo" name="libjpeg-turbo" remote="crosvm-android" />
   <project path="external/sqlite" name="sqlite" remote="crosvm-android" />
 
   <!-- Droid-VM forks -->
+  <project path="hardware/google/gfxstream" name="gfxstream" remote="droidvm" revision="droidvm" />
   <project path="external/crosvm" name="crosvm" remote="droidvm" revision="droidvm" />
-  <project path="packages/modules/Virtualization" name="Virtualization" remote="droidvm"
-           revision="android16-qpr2-release-local" />
+  <project path="packages/modules/Virtualization" name="Virtualization" remote="droidvm" revision="droidvm" />
+  <project path="external/virglrenderer" name="virglrenderer" remote="droidvm" revision="droidvm" />
+  <project path="external/libvncserver" name="libvncserver" remote="droidvm" revision="droidvm" />
   <!-- AOSP's libzstd names who may depend on it, and crosvm's disk is not on that list
        (nor is fs_mgr/libsnapshot, which already depended on it). Visibility is declared by
        the provider, so the grant has to live in zstd itself; this fork is that one commit on
        top of the AOSP revision. -->
   <project path="external/zstd" name="zstd" remote="droidvm" revision="droidvm" />
-  <project path="external/libvncserver"
-           name="libvncserver"
-           remote="droidvm"
-           revision="droidvm" />
 </manifest>
