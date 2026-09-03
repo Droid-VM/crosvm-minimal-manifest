@@ -92,7 +92,6 @@
   <project path="external/starlark-go" name="platform/external/starlark-go" />
   <project path="external/minijail" name="platform/external/minijail" />
   <project path="external/mesa3d" name="platform/external/mesa3d" />
-  <project path="external/virtio-media" name="platform/external/virtio-media" />
   <project path="external/vm_tools/p9"
            name="platform/external/vm_tools/p9"
            revision="main" />
@@ -138,6 +137,10 @@
   <project path="external/crosvm" name="crosvm" remote="droidvm" revision="droidvm" />
   <project path="packages/modules/Virtualization" name="Virtualization" remote="droidvm" revision="droidvm" />
   <project path="external/virglrenderer" name="virglrenderer" remote="droidvm" revision="droidvm" />
+  <!-- The virtio-media crate is where the VPU work lands (camera/decoder/encoder devices,
+       EXPBUF, the guest driver under driver/), so it follows the branch chain like crosvm
+       rather than tracking the AOSP snapshot. -->
+  <project path="external/virtio-media" name="virtio-media" remote="droidvm" revision="droidvm" />
   <project path="external/libvncserver" name="libvncserver" remote="droidvm" revision="droidvm" />
   <!-- AOSP's libzstd names who may depend on it, and crosvm's disk is not on that list
        (nor is fs_mgr/libsnapshot, which already depended on it). Visibility is declared by
