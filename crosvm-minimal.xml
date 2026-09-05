@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  crosvm_device_only 的最小构建树。剪裁依据见 docs/源码树瘦身清单-20260903.md。
+-->
 <manifest>
   <remote name="aosp"
           fetch="https://android.googlesource.com/"
@@ -30,16 +33,10 @@
   <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8"
            name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" />
   <project path="prebuilts/go/linux-x86" name="platform/prebuilts/go/linux-x86" />
-  <project path="prebuilts/jdk/jdk21" name="platform/prebuilts/jdk/jdk21" />
-  <project path="prebuilts/rust" name="platform/prebuilts/rust" />
-  <project path="prebuilts/sdk" name="platform/prebuilts/sdk" />
+  <!-- prebuilts/{rust,sdk} 为 Crosvm-Android 瘦身 fork，分支名与 default revision 一致。 -->
+  <project path="prebuilts/rust" name="prebuilts-rust" remote="crosvm-android" />
+  <project path="prebuilts/sdk" name="prebuilts-sdk" remote="crosvm-android" />
   <project path="toolchain/pgo-profiles" name="toolchain/pgo-profiles" />
-
-  <!-- GSI compatibility snapshots required by aosp_arm64 -->
-  <project path="prebuilts/vndk/v31" name="platform/prebuilts/vndk/v31" />
-  <project path="prebuilts/vndk/v32" name="platform/prebuilts/vndk/v32" />
-  <project path="prebuilts/vndk/v33" name="platform/prebuilts/vndk/v33" />
-  <project path="prebuilts/vndk/v34" name="platform/prebuilts/vndk/v34" />
 
   <!-- Core platform -->
   <project path="art" name="platform/art" />
@@ -51,9 +48,6 @@
   <project path="hardware/libhardware" name="platform/hardware/libhardware" />
   <project path="kernel/configs" name="kernel/configs" />
   <project path="libnativehelper" name="platform/libnativehelper" />
-  <project path="device/generic/arm64" name="device/generic/arm64" />
-  <project path="device/generic/common" name="device/generic/common" />
-  <project path="external/selinux" name="platform/external/selinux" />
   <project path="system/core" name="platform/system/core" />
   <project path="system/apex" name="platform/system/apex" />
   <project path="system/libbase" name="platform/system/libbase" />
@@ -66,19 +60,15 @@
   <project path="system/server_configurable_flags" name="platform/system/server_configurable_flags" />
   <project path="system/memory/libdmabufheap" name="platform/system/memory/libdmabufheap" />
   <project path="system/sepolicy" name="platform/system/sepolicy" />
-  <project path="system/security" name="platform/system/security" />
   <project path="system/tools/aidl" name="platform/system/tools/aidl" />
   <project path="system/tools/hidl" name="platform/system/tools/hidl" />
-  <project path="system/tools/sysprop" name="platform/system/tools/sysprop" />
   <project path="system/tools/xsdc" name="platform/system/tools/xsdc" />
   <project path="system/unwinding" name="platform/system/unwinding" />
   <project path="system/hardware/interfaces" name="platform/system/hardware/interfaces" />
 
   <!-- Virtualization -->
   <project path="test/app_compat/csuite" name="platform/test/app_compat/csuite" />
-  <project path="platform_testing" name="platform/platform_testing" />
   <project path="packages/modules/common" name="platform/packages/modules/common" />
-  <project path="packages/modules/NeuralNetworks" name="platform/packages/modules/NeuralNetworks" />
 
   <!-- Rust / crosvm direct deps -->
   <project path="external/go-cmp" name="platform/external/go-cmp" />
@@ -93,14 +83,9 @@
   <project path="external/minijail" name="platform/external/minijail" />
   <project path="external/mesa3d" name="platform/external/mesa3d" />
   <project path="external/virtio-media" name="platform/external/virtio-media" />
-  <project path="external/vm_tools/p9"
-           name="platform/external/vm_tools/p9"
-           revision="main" />
 
   <!-- Graphics / display stack -->
-  <project path="hardware/google/aemu" name="platform/hardware/google/aemu" />
   <project path="external/libdrm" name="platform/external/libdrm" />
-  <project path="external/minigbm" name="platform/external/minigbm" />
   <project path="external/wayland" name="platform/external/wayland" />
   <project path="external/wayland-protocols" name="platform/external/wayland-protocols" />
 
@@ -114,11 +99,8 @@
   <project path="external/libcap" name="platform/external/libcap" />
   <project path="external/boringssl" name="platform/external/boringssl" />
   <project path="external/compiler-rt" name="platform/external/compiler-rt" />
-  <project path="external/libcxx" name="platform/external/libcxx" />
-  <project path="external/libcxxabi" name="platform/external/libcxxabi" />
   <project path="external/libepoxy" name="platform/external/libepoxy" />
   <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/lz4" name="platform/external/lz4" />
   <project path="external/perfetto" name="platform/external/perfetto" />
   <project path="external/protobuf" name="platform/external/protobuf" />
   <project path="external/speex" name="platform/external/speex" />
@@ -139,9 +121,5 @@
   <project path="packages/modules/Virtualization" name="Virtualization" remote="droidvm" revision="droidvm" />
   <project path="external/virglrenderer" name="virglrenderer" remote="droidvm" revision="droidvm" />
   <project path="external/libvncserver" name="libvncserver" remote="droidvm" revision="droidvm" />
-  <!-- AOSP's libzstd names who may depend on it, and crosvm's disk is not on that list
-       (nor is fs_mgr/libsnapshot, which already depended on it). Visibility is declared by
-       the provider, so the grant has to live in zstd itself; this fork is that one commit on
-       top of the AOSP revision. -->
   <project path="external/zstd" name="zstd" remote="droidvm" revision="droidvm" />
 </manifest>
