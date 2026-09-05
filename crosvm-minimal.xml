@@ -128,7 +128,6 @@
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
-  <project path="external/rust/crates/v4l2r" name="v4l2r" remote="crosvm-android" />
   <project path="external/libjpeg-turbo" name="libjpeg-turbo" remote="crosvm-android" />
   <project path="external/sqlite" name="sqlite" remote="crosvm-android" />
 
@@ -141,6 +140,11 @@
        EXPBUF, the guest driver under driver/), so it follows the branch chain like crosvm
        rather than tracking the AOSP snapshot. -->
   <project path="external/virtio-media" name="virtio-media" remote="droidvm" revision="droidvm" />
+  <!-- v4l2r is the ioctl/buffer layer the virtio-media devices are built on, so the VPU work
+       edits it too. Droid-VM/v4l2r's wip/vpu is Crosvm-Android's android16-qpr2-release plus
+       those commits; there is no droidvm branch on the fork yet, so this pins wip/vpu directly
+       (1_build_crosvm_prepare.sh walks it along the chain like every other fork after sync). -->
+  <project path="external/rust/crates/v4l2r" name="v4l2r" remote="droidvm" revision="wip/vpu" />
   <project path="external/libvncserver" name="libvncserver" remote="droidvm" revision="droidvm" />
   <!-- AOSP's libzstd names who may depend on it, and crosvm's disk is not on that list
        (nor is fs_mgr/libsnapshot, which already depended on it). Visibility is declared by
